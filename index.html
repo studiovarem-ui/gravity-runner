@@ -39,7 +39,6 @@ function resize(){
 }
 addEventListener('resize',resize);
 addEventListener('orientationchange',()=>setTimeout(resize,150));
-resize();
 
 function gc(ex,ey){const r=cRect;return{x:(ex-r.left)*(W/r.width),y:(ey-r.top)*(H/r.height)};}
 function inR(p,x,y,w,h){return p.x>=x&&p.x<=x+w&&p.y>=y&&p.y<=y+h;}
@@ -467,6 +466,7 @@ function render(){
  cx.restore();drwTr();
 }
 
+resize();
 (function loop(){update();render();requestAnimationFrame(loop);})();
 </script>
 </body>
